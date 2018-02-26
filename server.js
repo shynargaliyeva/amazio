@@ -6,14 +6,14 @@ var bodyParser = require('body-parser');
 var app = express();
 
 require('dotenv').config();
-requrie('./config/database');
+require('./config/database');
 
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 
 // Put API routes here
-app.use('/api', require('./api/beans'));
+app.use('/api', require('./routes/api'));
 
 // "catch-all" routes is necessary for a 
 //SPA's client-side routing to properly work
