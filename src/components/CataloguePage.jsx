@@ -1,7 +1,7 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Button } from 'react-materialize';
 
-const CataloguePage = ({ products }) => {
+const CataloguePage = ({ products, handleAddToCart }) => {
     return (
     <table>
         <tbody>
@@ -17,6 +17,10 @@ const CataloguePage = ({ products }) => {
                     <td>{product.price}</td>
                     <td>{product.description}</td>
                     <td>{product.sku}</td>
+                    <td><Button floating waves='light' icon='add' 
+                                product={product}
+                                onClick={() => handleAddToCart(product)} />
+                    </td>
                 </tr>
             ))}
         </tbody>

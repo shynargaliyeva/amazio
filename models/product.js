@@ -6,6 +6,8 @@ var productSchema = new Schema ({
     price: Number,
     description: String,
     sku: String
+}, {
+    timestamps: true
 })
 
 module.exports = mongoose.model('Product', productSchema)
